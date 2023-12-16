@@ -1,13 +1,15 @@
-FROM node:14
+# Python için resmi Docker imajını temel al
+FROM python:3.9
 
-WORKDIR /usr/src/app
+# Çalışma dizinini ayarla
+WORKDIR /app
 
-COPY package*.json ./
+# Gerekli Python bağımlılıklarını yükle
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN npm install
-
+# Geri kalan proje dosyalarını ekle
 COPY . .
 
-EXPOSE 3000
-
-CMD ["npm", "start"]
+# Uygulamayı çalıştır
+CMD ["python", "app.py"]
