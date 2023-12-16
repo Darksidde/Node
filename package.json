@@ -1,0 +1,15 @@
+// package.json
+
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js Web Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Testler burada çalıştırılacak\""
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
