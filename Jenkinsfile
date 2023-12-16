@@ -10,7 +10,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Testleri çalıştır
+                // Docker ile Node.js uygulamasını çalıştır
+                sh 'docker run -p 3000:3000 my-node-app'
+                // Test adımları burada olabilir, örneğin:
                 sh 'npm test'
             }
         }
